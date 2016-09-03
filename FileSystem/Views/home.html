@@ -1,0 +1,31 @@
+﻿<div data-ng-controller="HomeController" data-ng-init="init()">
+    <div class="main-container">
+        <div class="size-table">
+            <div class="table-coll">
+                <div class="table-cell-header"><label>Less 10Mb</label></div>
+                <div class="table-cell-body"><p>{{SizeCount.Small}}</p></div>
+            </div>
+            <div class="table-coll">
+                <div class="table-cell-header"><label>10Mb-50Mb</label></div>
+                <div class="table-cell-body"><p>{{SizeCount.Middle}}</p></div>
+            </div>
+            <div class="table-coll">
+                <div class="table-cell-header"><label>More 100Mb</label></div>
+                <div class="table-cell-body"><p>{{SizeCount.Big}}</p></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="path-container">
+            <label>Current path:  </label><p>{{Path}}</p>
+        </div>
+        <div class="directory-entry-container">
+            <a ng-click="Back()" class="dir">..</a>
+            <div ng-repeat="dir in Directories">
+                <a ng-click="GoTo($index)" class="dir">{{dir}}</a>
+            </div>
+            <div ng-repeat="file in Files">
+                <a>{{file}}</a>
+            </div>
+        </div>
+    </div>
+</div>
